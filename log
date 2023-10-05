@@ -36,3 +36,29 @@ Thu 05 Oct 2023 03:20:34 PM UTC:
  tests:  2|4
 total_score: 15/70
 76803a7
+Thu 05 Oct 2023 03:26:57 PM UTC: 
+ sudoku.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:70:29: error: ‘subMatriz’ undeclared (first use in this function)
+   70 |             marca_subMatriz[subMatriz][num] = 1;
+      |                             ^~~~~~~~~
+sudoku.c:70:29: note: each undeclared identifier is reported only once for each function it appears in
+sudoku.c:70:40: error: ‘num’ undeclared (first use in this function)
+   70 |             marca_subMatriz[subMatriz][num] = 1;
+      |                                        ^~~
+sudoku.c: At top level:
+sudoku.c:74:5: error: expected identifier or ‘(’ before ‘return’
+   74 |     return 1;
+      |     ^~~~~~
+sudoku.c:75:1: error: expected identifier or ‘(’ before ‘}’ token
+   75 | }
+      | ^
+sudoku.c: In function ‘is_valid’:
+sudoku.c:72:5: error: control reaches end of non-void function [-Werror=return-type]
+   72 |     }
+      |     ^
+cc1: all warnings being treated as errors
+Compilation failed
+3b65ec5
