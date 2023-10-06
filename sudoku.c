@@ -5,21 +5,21 @@
 
 typedef struct{
    int sudo[9][9];
-}Node;
+}SudokuNode ;
 
-Node* createNode(){
-  Node* n=(Node*) malloc(sizeof(Node));
+SudokuNode * createNode(){
+  SudokuNode * n=(SudokuNode *) malloc(sizeof(SudokuNode ));
   return n;
 }
 
-Node* copy(Node* n){
-    Node* new=(Node*) malloc(sizeof(Node));
+SudokuNode * copy(SudokuNode * n){
+    SudokuNode * new=(SudokuNode *) malloc(sizeof(SudokuNode ));
     *new = *n;
     return new;
 }
 
-Node* read_file (char* file_name){
-  Node* n = createNode();
+SudokuNode * read_file (char* file_name){
+  SudokuNode * n = createNode();
   FILE* file = fopen (file_name, "r");
   int i,j;
   for(i=0;i<9;i++){
@@ -33,7 +33,7 @@ Node* read_file (char* file_name){
   return n;
 }
 
-void print_node(Node* n){
+void print_node(SudokuNode * n){
     int i,j;
     for(i=0;i<9;i++){
        for(j=0;j<9;j++)
@@ -43,7 +43,7 @@ void print_node(Node* n){
     printf("\n");
 }
 
-int is_valid(Node* n) {
+int is_valid(SudokuNode * n) {
     int marca_fila[9][10] = {0}; 
     int marca_col[9][10] = {0};  
     int marca_subMatriz[9][10] = {0};  
@@ -75,7 +75,7 @@ int is_valid(Node* n) {
     return 1;
 }
 
-List* get_adj_nodes(Node* n) {
+List* get_adj_nodes(SudokuNode * n) {
     List* lista_nodos_validos = createList();
     int i, j;
     int fila = -1, col = -1;
@@ -93,7 +93,7 @@ List* get_adj_nodes(Node* n) {
         return lista_nodos_validos;
 
     for (int k = 1; k <= 9; k++) {
-        Node* nodo_adyacente = copy(n);
+        SudokuNode * nodo_adyacente = copy(n);
         nodo_adyacente->sudo[fila][col] = k;
 
         if (is_valid(nodo_adyacente)) {
@@ -106,7 +106,7 @@ List* get_adj_nodes(Node* n) {
     return lista_nodos_validos;
 }
 
-int is_final(Node* n) {
+int is_final(SudokuNode * n) {
     for (int i = 0; i < 9; i++) {
         for (int j = 0; j < 9; j++) {
             if (n->sudo[i][j] == 0) {
@@ -117,14 +117,14 @@ int is_final(Node* n) {
     return 1;
 }
 
-Node* DFS(Node* initial, int* cont){
+SudokuNode * DFS(SudokuNode * initial, int* cont){
     Stack* stack = createStack();
     push(stack, initial);
 
     while (!is_empty(stack)) {
         (*cont)++;
 
-        Node* current = top(stack);
+        SudokuNode * current = top(stack);
         pop(stack);
 
         if (is_final(current)) {

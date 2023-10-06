@@ -160,3 +160,244 @@ sudoku.c:139:34: error: ‘Node’ has no member named ‘next’
       |                                  ^~
 Compilation failed
 140a84e
+Fri 06 Oct 2023 10:11:26 PM UTC: 
+ sudoku.c | 28 ++++++++++++++--------------
+ 1 file changed, 14 insertions(+), 14 deletions(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:135:36: error: invalid use of incomplete typedef ‘List’
+  135 |         Node* temp_node = adj_nodes->first;
+      |                                    ^~
+sudoku.c:138:34: error: invalid use of incomplete typedef ‘Node’
+  138 |             push(stack, temp_node->data);
+      |                                  ^~
+sudoku.c:139:34: error: invalid use of incomplete typedef ‘Node’
+  139 |             temp_node = temp_node->next;
+      |                                  ^~
+test.c: In function ‘adj_test1’:
+test.c:59:21: error: initialization of ‘Node *’ from incompatible pointer type ‘SudokuNode *’ [-Werror=incompatible-pointer-types]
+   59 |     Node* initial = read_file("s12a.txt");
+      |                     ^~~~~~~~~
+test.c:62:31: error: passing argument 1 of ‘get_adj_nodes’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+   62 |     List* adj = get_adj_nodes(initial);
+      |                               ^~~~~~~
+      |                               |
+      |                               Node *
+In file included from test.c:5:
+sudoku.c:78:34: note: expected ‘SudokuNode *’ but argument is of type ‘Node *’
+   78 | List* get_adj_nodes(SudokuNode * n) {
+      |                     ~~~~~~~~~~~~~^
+test.c:75:11: error: invalid use of incomplete typedef ‘Node’
+   75 |     if(aux->sudo[0][0]!=5 || aux->sudo[0][1]!=3 || aux->sudo[0][2]!=1){
+      |           ^~
+test.c:75:33: error: invalid use of incomplete typedef ‘Node’
+   75 |     if(aux->sudo[0][0]!=5 || aux->sudo[0][1]!=3 || aux->sudo[0][2]!=1){
+      |                                 ^~
+test.c:75:55: error: invalid use of incomplete typedef ‘Node’
+   75 |     if(aux->sudo[0][0]!=5 || aux->sudo[0][1]!=3 || aux->sudo[0][2]!=1){
+      |                                                       ^~
+test.c:76:74: error: invalid use of incomplete typedef ‘Node’
+   76 |         sprintf(msg, "primer nodo %d %d %d... (deberia ser 5 3 1...)",aux->sudo[0][0],aux->sudo[0][1],aux->sudo[0][2]);
+      |                                                                          ^~
+test.c:76:90: error: invalid use of incomplete typedef ‘Node’
+   76 |         sprintf(msg, "primer nodo %d %d %d... (deberia ser 5 3 1...)",aux->sudo[0][0],aux->sudo[0][1],aux->sudo[0][2]);
+      |                                                                                          ^~
+test.c:76:106: error: invalid use of incomplete typedef ‘Node’
+   76 |         sprintf(msg, "primer nodo %d %d %d... (deberia ser 5 3 1...)",aux->sudo[0][0],aux->sudo[0][1],aux->sudo[0][2]);
+      |                                                                                                          ^~
+test.c:81:12: error: invalid use of incomplete typedef ‘Node’
+   81 |     if(aux2->sudo[0][0]!=5 || aux2->sudo[0][1]!=3 || aux2->sudo[0][2]!=2){
+      |            ^~
+test.c:81:35: error: invalid use of incomplete typedef ‘Node’
+   81 |     if(aux2->sudo[0][0]!=5 || aux2->sudo[0][1]!=3 || aux2->sudo[0][2]!=2){
+      |                                   ^~
+test.c:81:58: error: invalid use of incomplete typedef ‘Node’
+   81 |     if(aux2->sudo[0][0]!=5 || aux2->sudo[0][1]!=3 || aux2->sudo[0][2]!=2){
+      |                                                          ^~
+test.c:82:76: error: invalid use of incomplete typedef ‘Node’
+   82 |         sprintf(msg, "segundo nodo %d %d %d... (deberia ser 5 3 2...)",aux2->sudo[0][0],aux2->sudo[0][1],aux2->sudo[0][2]);
+      |                                                                            ^~
+test.c:82:93: error: invalid use of incomplete typedef ‘Node’
+   82 |         sprintf(msg, "segundo nodo %d %d %d... (deberia ser 5 3 2...)",aux2->sudo[0][0],aux2->sudo[0][1],aux2->sudo[0][2]);
+      |                                                                                             ^~
+test.c:82:110: error: invalid use of incomplete typedef ‘Node’
+   82 |         sprintf(msg, "segundo nodo %d %d %d... (deberia ser 5 3 2...)",aux2->sudo[0][0],aux2->sudo[0][1],aux2->sudo[0][2]);
+      |                                                                                                              ^~
+test.c:92:20: error: invalid use of incomplete typedef ‘Node’
+   92 |             initial->sudo[i][j]=1;
+      |                    ^~
+test.c:95:25: error: passing argument 1 of ‘get_adj_nodes’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+   95 |     adj = get_adj_nodes(initial);
+      |                         ^~~~~~~
+      |                         |
+      |                         Node *
+In file included from test.c:5:
+sudoku.c:78:34: note: expected ‘SudokuNode *’ but argument is of type ‘Node *’
+   78 | List* get_adj_nodes(SudokuNode * n) {
+      |                     ~~~~~~~~~~~~~^
+test.c: In function ‘test_isvalid’:
+test.c:108:21: error: initialization of ‘Node *’ from incompatible pointer type ‘SudokuNode *’ [-Werror=incompatible-pointer-types]
+  108 |     Node* initial = read_file("s12a.txt");
+      |                     ^~~~~~~~~
+test.c:112:18: error: passing argument 1 of ‘is_valid’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  112 |     if(!is_valid(initial)){
+      |                  ^~~~~~~
+      |                  |
+      |                  Node *
+In file included from test.c:5:
+sudoku.c:46:27: note: expected ‘SudokuNode *’ but argument is of type ‘Node *’
+   46 | int is_valid(SudokuNode * n) {
+      |              ~~~~~~~~~~~~~^
+test.c:118:12: error: invalid use of incomplete typedef ‘Node’
+  118 |     initial->sudo[0][8]=5;
+      |            ^~
+test.c:120:17: error: passing argument 1 of ‘is_valid’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  120 |     if(is_valid(initial)){
+      |                 ^~~~~~~
+      |                 |
+      |                 Node *
+In file included from test.c:5:
+sudoku.c:46:27: note: expected ‘SudokuNode *’ but argument is of type ‘Node *’
+   46 | int is_valid(SudokuNode * n) {
+      |              ~~~~~~~~~~~~~^
+test.c:126:12: error: invalid use of incomplete typedef ‘Node’
+  126 |     initial->sudo[0][8]=0;
+      |            ^~
+test.c:129:12: error: invalid use of incomplete typedef ‘Node’
+  129 |     initial->sudo[8][4]=7;
+      |            ^~
+test.c:131:17: error: passing argument 1 of ‘is_valid’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  131 |     if(is_valid(initial)){
+      |                 ^~~~~~~
+      |                 |
+      |                 Node *
+In file included from test.c:5:
+sudoku.c:46:27: note: expected ‘SudokuNode *’ but argument is of type ‘Node *’
+   46 | int is_valid(SudokuNode * n) {
+      |              ~~~~~~~~~~~~~^
+test.c:137:12: error: invalid use of incomplete typedef ‘Node’
+  137 |     initial->sudo[8][4]=0;
+      |            ^~
+test.c:140:12: error: invalid use of incomplete typedef ‘Node’
+  140 |     initial->sudo[2][3]=6;
+      |            ^~
+test.c:141:17: error: passing argument 1 of ‘is_valid’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  141 |     if(is_valid(initial)){
+      |                 ^~~~~~~
+      |                 |
+      |                 Node *
+In file included from test.c:5:
+sudoku.c:46:27: note: expected ‘SudokuNode *’ but argument is of type ‘Node *’
+   46 | int is_valid(SudokuNode * n) {
+      |              ~~~~~~~~~~~~~^
+test.c: In function ‘test_mod_adj’:
+test.c:152:21: error: initialization of ‘Node *’ from incompatible pointer type ‘SudokuNode *’ [-Werror=incompatible-pointer-types]
+  152 |     Node* initial = read_file("s12a.txt");
+      |                     ^~~~~~~~~
+test.c:155:31: error: passing argument 1 of ‘get_adj_nodes’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  155 |     List* adj = get_adj_nodes(initial);
+      |                               ^~~~~~~
+      |                               |
+      |                               Node *
+In file included from test.c:5:
+sudoku.c:78:34: note: expected ‘SudokuNode *’ but argument is of type ‘Node *’
+   78 | List* get_adj_nodes(SudokuNode * n) {
+      |                     ~~~~~~~~~~~~~^
+test.c:166:12: error: invalid use of incomplete typedef ‘Node’
+  166 |     if(aux1->sudo[0][2]!=1 || aux2->sudo[0][2]!=2 || aux3->sudo[0][2]!=4){
+      |            ^~
+test.c:166:35: error: invalid use of incomplete typedef ‘Node’
+  166 |     if(aux1->sudo[0][2]!=1 || aux2->sudo[0][2]!=2 || aux3->sudo[0][2]!=4){
+      |                                   ^~
+test.c:166:58: error: invalid use of incomplete typedef ‘Node’
+  166 |     if(aux1->sudo[0][2]!=1 || aux2->sudo[0][2]!=2 || aux3->sudo[0][2]!=4){
+      |                                                          ^~
+test.c:167:97: error: invalid use of incomplete typedef ‘Node’
+  167 |         sprintf(msg,"los valores validos para la tercera casilla son 1,2,4 y no %d,%d y %d",aux1->sudo[0][2],aux2->sudo[0][2],aux3->sudo[0][2]);
+      |                                                                                                 ^~
+test.c:167:114: error: invalid use of incomplete typedef ‘Node’
+  167 |         sprintf(msg,"los valores validos para la tercera casilla son 1,2,4 y no %d,%d y %d",aux1->sudo[0][2],aux2->sudo[0][2],aux3->sudo[0][2]);
+      |                                                                                                                  ^~
+test.c:167:131: error: invalid use of incomplete typedef ‘Node’
+  167 |         sprintf(msg,"los valores validos para la tercera casilla son 1,2,4 y no %d,%d y %d",aux1->sudo[0][2],aux2->sudo[0][2],aux3->sudo[0][2]);
+      |                                                                                                                                   ^~
+test.c: In function ‘test_isfinal’:
+test.c:178:21: error: initialization of ‘Node *’ from incompatible pointer type ‘SudokuNode *’ [-Werror=incompatible-pointer-types]
+  178 |     Node* initial = read_file("s12a.txt");
+      |                     ^~~~~~~~~
+test.c:180:17: error: passing argument 1 of ‘is_final’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  180 |     if(is_final(initial)){
+      |                 ^~~~~~~
+      |                 |
+      |                 Node *
+In file included from test.c:5:
+sudoku.c:109:27: note: expected ‘SudokuNode *’ but argument is of type ‘Node *’
+  109 | int is_final(SudokuNode * n) {
+      |              ~~~~~~~~~~~~~^
+test.c:189:20: error: invalid use of incomplete typedef ‘Node’
+  189 |             initial->sudo[i][j]=1;
+      |                    ^~
+test.c:191:18: error: passing argument 1 of ‘is_final’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  191 |     if(!is_final(initial)){
+      |                  ^~~~~~~
+      |                  |
+      |                  Node *
+In file included from test.c:5:
+sudoku.c:109:27: note: expected ‘SudokuNode *’ but argument is of type ‘Node *’
+  109 | int is_final(SudokuNode * n) {
+      |              ~~~~~~~~~~~~~^
+test.c: In function ‘test_dfs’:
+test.c:203:21: error: initialization of ‘Node *’ from incompatible pointer type ‘SudokuNode *’ [-Werror=incompatible-pointer-types]
+  203 |     Node* initial = read_file("s12a.txt");
+      |                     ^~~~~~~~~
+test.c:206:23: error: passing argument 1 of ‘DFS’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  206 |     Node* final = DFS(initial, &cont);
+      |                       ^~~~~~~
+      |                       |
+      |                       Node *
+In file included from test.c:5:
+sudoku.c:120:31: note: expected ‘SudokuNode *’ but argument is of type ‘Node *’
+  120 | SudokuNode * DFS(SudokuNode * initial, int* cont){
+      |                  ~~~~~~~~~~~~~^~~~~~~
+test.c:206:19: error: initialization of ‘Node *’ from incompatible pointer type ‘SudokuNode *’ [-Werror=incompatible-pointer-types]
+  206 |     Node* final = DFS(initial, &cont);
+      |                   ^~~
+test.c:213:18: error: passing argument 1 of ‘is_valid’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  213 |     if(!is_valid(final)){
+      |                  ^~~~~
+      |                  |
+      |                  Node *
+In file included from test.c:5:
+sudoku.c:46:27: note: expected ‘SudokuNode *’ but argument is of type ‘Node *’
+   46 | int is_valid(SudokuNode * n) {
+      |              ~~~~~~~~~~~~~^
+test.c:218:18: error: passing argument 1 of ‘is_final’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  218 |     if(!is_final(final)){
+      |                  ^~~~~
+      |                  |
+      |                  Node *
+In file included from test.c:5:
+sudoku.c:109:27: note: expected ‘SudokuNode *’ but argument is of type ‘Node *’
+  109 | int is_final(SudokuNode * n) {
+      |              ~~~~~~~~~~~~~^
+test.c:226:13: error: assignment to ‘Node *’ from incompatible pointer type ‘SudokuNode *’ [-Werror=incompatible-pointer-types]
+  226 |     initial = read_file("s12a.txt");
+      |             ^
+test.c:229:12: error: invalid use of incomplete typedef ‘Node’
+  229 |     initial->sudo[0][2]=1;
+      |            ^~
+test.c:230:17: error: passing argument 1 of ‘DFS’ from incompatible pointer type [-Werror=incompatible-pointer-types]
+  230 |     final = DFS(initial, &cont);
+      |                 ^~~~~~~
+      |                 |
+      |                 Node *
+In file included from test.c:5:
+sudoku.c:120:31: note: expected ‘SudokuNode *’ but argument is of type ‘Node *’
+  120 | SudokuNode * DFS(SudokuNode * initial, int* cont){
+      |                  ~~~~~~~~~~~~~^~~~~~~
+test.c:230:11: error: assignment to ‘Node *’ from incompatible pointer type ‘SudokuNode *’ [-Werror=incompatible-pointer-types]
+  230 |     final = DFS(initial, &cont);
+      |           ^
+cc1: all warnings being treated as errors
+Compilation failed
+c02eb79
