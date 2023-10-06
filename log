@@ -144,3 +144,19 @@ sudoku.c:139:34: error: ‘Node’ has no member named ‘next’
       |                                  ^~
 Compilation failed
 545eea0
+Fri 06 Oct 2023 10:04:34 PM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:135:36: error: invalid use of incomplete typedef ‘List’
+  135 |         Node* temp_node = adj_nodes->first;
+      |                                    ^~
+sudoku.c:138:34: error: ‘Node’ has no member named ‘data’
+  138 |             push(stack, temp_node->data);
+      |                                  ^~
+sudoku.c:139:34: error: ‘Node’ has no member named ‘next’
+  139 |             temp_node = temp_node->next;
+      |                                  ^~
+Compilation failed
+140a84e
