@@ -444,3 +444,9 @@ sudoku.c:139:34: error: request for member ‘next’ in something not a structu
 cc1: all warnings being treated as errors
 Compilation failed
 75bde90
+Fri 06 Oct 2023 10:13:11 PM UTC: 
+ sudoku.c | 31 -------------------------------
+ 1 file changed, 31 deletions(-)
+ tests:  6|2
+total_score: 45/70
+921ad5e
